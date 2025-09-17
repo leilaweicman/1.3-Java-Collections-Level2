@@ -1,5 +1,7 @@
 package exercise1;
 
+import java.util.Objects;
+
 public class Restaurant {
     private String name;
     private int score;
@@ -21,5 +23,22 @@ public class Restaurant {
 
     public int getScore() {
         return score;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (score: " + score + ")";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Restaurant restaurant)) return false;
+        return score == restaurant.score && name.equals(restaurant.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, score);
     }
 }
