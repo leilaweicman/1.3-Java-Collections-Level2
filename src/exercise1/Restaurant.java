@@ -10,7 +10,7 @@ public class Restaurant {
         if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Restaurant name must not be null or empty");
         }
-        if (score <= 0) {
+        if (score < 0) {
             throw new IllegalArgumentException("Score must be greater or equal to 0");
         }
         this.name = name;
