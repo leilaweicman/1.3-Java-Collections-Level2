@@ -11,7 +11,6 @@ Implement the necessary methods so that it is **not possible** to insert `Restau
 > Important: Restaurants with the **same name but different score** are allowed.  
 > Only duplicates of **(name, score)** must be rejected.
 
-
 #### ✅ What was implemented
 - `Restaurant` with:
    - Constructor validation (non-null/non-empty `name`, positive `score` as per spec).
@@ -25,6 +24,20 @@ Implement the necessary methods so that it is **not possible** to insert `Restau
 ---
 
 ### Exercise 2
+Using the previous `Restaurant` class, implement the necessary logic so that `Restaurant` objects are **ordered by name (ascending)** and **by score (descending)**.
+
+For example:
+```sh
+name: restaurant1, score: 8
+name: restaurant1, score: 7
+```
+
+#### ✅ What was implemented
+- `Restaurant` now implements `Comparable<Restaurant>`.
+- Custom `compareTo()` ensures:
+  - Restaurants are sorted by **name alphabetically (A–Z)**.
+  - If names are the same, sorted by **score in descending order**.
+- `TreeSet` is used in the `main()` to keep restaurants ordered automatically.
 
 ---
 
@@ -61,11 +74,19 @@ cd 1.3-Java-Collections-Level2
 3. Expected console output:
 
 ```sh
-Restaurants in set: [McDonalds (score: 8), McDonalds (score: 9), Burger King (score: 7)]
+Restaurants: [McDonalds (score: 8), McDonalds (score: 9), Burger King (score: 7)]
 ```
 
 ### Exercise 2
 
+1. Open Main.java in the exercise1 package.
+2. Run the main() method.
+3. Expected console output:
+
+```sh
+Restaurants: [Burger King (score: 7), Burger King (score: 5), McDonalds (score: 9), McDonalds (score: 8), McDonalds (score: 7)]
+
+```
 
 ---
 
